@@ -1,6 +1,6 @@
 const db = require("./connection");
 const inquirer  = require("inquirer");
-const { viewAllDepartments } = require("./departments");
+const { viewAllDepartments } = require("./department");
 
 async function viewAllRoles() {
     try {

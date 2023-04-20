@@ -1,4 +1,4 @@
-const db = require("./db/connection");
+const db = require("./connection");
 const inquirer  = require("inquirer");
 
 async function viewAllDepartments() {
