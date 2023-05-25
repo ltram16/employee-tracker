@@ -1,6 +1,6 @@
 const db = require("./connection");
 const inquirer = require("inquirer");
-const { viewAllRole } = require("./roles");
+const { viewAllRoles } = require("./roles");
 
 async function viewAllEmployees() {
     try {
@@ -9,7 +9,7 @@ async function viewAllEmployees() {
             return employees;
 
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
 };
 

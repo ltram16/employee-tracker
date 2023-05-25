@@ -22,7 +22,7 @@ async function addDepartment() {
                 message: "What is the name of the department you would like to add?"
             }
         ])
-        await db.query(`INSERT INTO department (name) VALUES ("${name})`)
+        await db.query(`INSERT INTO department (name) VALUES ("${name}")`)
         const addDepartment = await viewAllDepartments();
         return addDepartment;
     } catch (err) {

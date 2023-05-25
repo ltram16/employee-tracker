@@ -1,12 +1,12 @@
 
 const { prompt } = require("inquirer");
 const db = require("./db/connection");
-const { viewAllDepartments, addDepartment, deleteDepartment } = require("./db/department");
+const { viewAllDepartments, addDepartment, delDepartment } = require("./db/department");
 const { viewAllEmployees, addEmployees, deleteEmployees, updateEmployeeRole } = require("./db/employees");
 const { viewAllRoles, addRole, deleteRole } = require("./db/roles");
 
 const start = async () => {
-    console.log("Welcome to the Employee Manager!");
+    // console.log("Welcome to the Employee Manager!");
     const { choice } = await prompt([
         {
             type: "list",
@@ -23,7 +23,7 @@ const start = async () => {
                 'Add an employee',
                 'Update an employee role',
                 'Delete an employee',
-                'Exist'
+                'Exit'
             ]
         }
     ])
@@ -38,8 +38,8 @@ switch (choice) {
         console.table(newDepartment)
         break;
     case 'Delete a department':
-        const delDepartment = await deleteDepartment()
-        console.table(delDepartment)
+        const deleteDepartment = await delDepartment()
+        console.table(deleteDepartment)
         break;
     case 'View all roles':
         const viewRoles = await viewAllRoles()
@@ -57,7 +57,7 @@ switch (choice) {
         const viewEmployees = await viewAllEmployees()
         console.table(viewEmployees)
         break;
-    case 'Add an employees':
+    case 'Add an employee':
         const newEmployees = await addEmployees()
         console.table(newEmployees)
         break;
@@ -65,15 +65,15 @@ switch (choice) {
         const updateEmployee = await updateEmployeeRole()
         console.table(updateEmployee)
         break;
-    case 'Delete an employee role':
+    case 'Delete an employee':
         const delEmployees = await deleteEmployees()
         console.table(delEmployees)
         break;
-    case 'Exist':
+    case 'Exit':
         console.log("Goodbye!");
-        return;
+        process.exit()
     }
     start();
 }
-
+console.log("Welcome to the Employee Management!")
 start();
