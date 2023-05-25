@@ -15,3 +15,4 @@ Clone the repository and install NPM (npm i).
 ## Usage <a id="usage"></a>
 Run the application in the command line by running node index.js. 
 ## Walkthrough Video
+https://drive.google.com/file/d/1sLmCm3DgS2kVr4cFZltk0PagwX5vC8A4/view
